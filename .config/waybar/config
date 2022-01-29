@@ -1,0 +1,72 @@
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "left", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-right": ["sway/mode", "sway/workspaces"],
+    "modules-center": ["tray"],
+    "modules-left": ["clock", "battery", "network", "pulseaudio"],
+    // Modules configuration
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+				"format": "{:%l\n%M\n\n%b\n%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}\n{icon}",
+        "format-charging": "{capacity}%\n",
+        "format-plugged": "{capacity}%\n",
+        "format-alt": "{time}\n{icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        //"format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{signalStrength}\n直",
+        //"format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "",
+        "tooltip-format": "{essid} {ifname} {ipaddr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "睊",
+        "format-alt": "{essid}\n{ifname}\n{ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        // "format": "{volume}%\n{icon}\n{format_source}",
+        "format": "{volume}\n<big>{icon}</big>",
+        "format-bluetooth": "{volume}\n<big>{icon}\n</big>",
+        "format-bluetooth-muted": "<big>婢</big>\n{icon}",
+        "format-muted": "<big>婢</big>",
+        "format-source": "{volume}\n<big></big>",
+        "format-source-muted": "<big></big>",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["奄", "奔", "墳"]
+        },
+        "on-click": "pavucontrol"
+    },
+}
+
+
