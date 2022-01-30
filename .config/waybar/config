@@ -18,7 +18,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-				"format": "{:%l\n%M\n\n%b\n%d}",
+				"format": "{:%I\n%M\n\n%b\n%d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -28,13 +28,14 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}\n{icon}",
-        "format-charging": "{capacity}%\n",
-        "format-plugged": "{capacity}%\n",
+        "format": "{capacity}\n<big>{icon}</big>",
+        "format-charging": "{capacity}%\n",
+        "format-plugged": "{capacity}%\nﮣ",
         "format-alt": "{time}\n{icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        // "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
