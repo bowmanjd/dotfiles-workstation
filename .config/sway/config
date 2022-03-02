@@ -18,9 +18,9 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu bemenu-run -i --no-exec | xargs swaymsg exec --
+set $menu bemenu-run -p 'Run:' -n --fn 'Hack Nerd Font 15' -i --no-exec | xargs swaymsg exec --
 
-set $wobsock /run/user/1000/wob.sock
+set $wobsock $XDG_RUNTIME_DIR/wob.sock
 
 # Preferred browser
 set $browser microsoft-edge-beta --enable-features=UseOzonePlatform --ozone-platform=wayland
@@ -212,13 +212,23 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+bindsym $mod+grave exec clipman pick --max-items=25 --tool=bemenu --tool-args="-p Clipboard -W 0.5 -cnl25 --fn 'Hack Nerd Font 16'"
+bindsym $mod+asciitilde exec clipman clear --max-items=25 --tool=bemenu --tool-args="-p Clipboard -W 0.5 -cnl25 --fn 'Hack Nerd Font 16'"
+
 exec mako --anchor bottom-right
+
+exec ~/.local/bin/idle
+
+exec wl-paste -t text --watch clipman store --max-items=500
 
 exec rm -f $wobsock && mkfifo $wobsock && tail -f $wobsock | wob
 
 bindsym $mod+m exec makoctl dismiss -a
 
 bindsym $mod+l exec ~/.local/bin/lockscreen --force
+
+bindsym XF86PowerOff exec systemctl suspend
+bindsym XF86Sleep exec systemctl suspend
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-mute @DEFAULT_SINK@ no && pactl set-sink-volume @DEFAULT_SINK@ +1% && pactl get-sink-volume @DEFAULT_SINK@ | rg --pcre2 -o '(?<=\s)(\d+)(?=%)' | head -1 > $wobsock
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1% && pactl get-sink-volume @DEFAULT_SINK@ | rg --pcre2 -o '(?<=\s)(\d+)(?=%)' | head -1 > $wobsock
