@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-right": ["sway/mode", "sway/workspaces"],
     "modules-center": ["tray"],
-    "modules-left": ["clock", "battery", "network", "pulseaudio"],
+    "modules-left": ["clock", "battery", "network", "pulseaudio", "custom/dwt"],
     // Modules configuration
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -68,6 +68,11 @@
         },
         "on-click": "pavucontrol"
     },
+		"custom/dwt": {
+			"exec": "~/.local/bin/touchpad.py waybar",
+			"on-click": "~/.local/bin/touchpad.py toggle",
+			"restart-interval": 2,
+		}
 }
 
 
