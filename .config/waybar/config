@@ -29,8 +29,8 @@
             "critical": 15
         },
         "format": "{capacity}\n<big>{icon}</big>",
-        "format-charging": "{capacity}%\n",
-        "format-plugged": "{capacity}%\nﮣ",
+        "format-charging": "{capacity}\n",
+        "format-plugged": "{capacity}\nﮣ",
         "format-alt": "{time}\n{icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",

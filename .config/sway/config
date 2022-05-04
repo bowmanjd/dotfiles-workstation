@@ -23,7 +23,8 @@ set $menu bemenu-run -p 'Run:' -n --fn 'Hack Nerd Font 15' -i --no-exec | xargs 
 set $wobsock $XDG_RUNTIME_DIR/wob.sock
 
 # Preferred browser
-set $browser microsoft-edge-beta --enable-features=UseOzonePlatform --ozone-platform=wayland
+# set $browser microsoft-edge-beta --enable-features=UseOzonePlatform --ozone-platform=wayland
+set $browser firefox
 
 ### Output configuration
 #
