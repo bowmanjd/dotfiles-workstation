@@ -214,8 +214,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym $mod+grave exec clipman pick --max-items=25 --tool=bemenu --tool-args="-p Clipboard -W 0.5 -cnl25 --fn 'Hack Nerd Font 16'"
-bindsym $mod+asciitilde exec clipman clear --max-items=25 --tool=bemenu --tool-args="-p Clipboard -W 0.5 -cnl25 --fn 'Hack Nerd Font 16'"
+bindsym Ctrl+grave exec clipman pick --max-items=25 --tool=bemenu --tool-args="-p Clipboard -W 0.5 -cnl25 --fn 'Hack Nerd Font 16'"
+bindsym Ctrl+asciitilde exec clipman clear --max-items=25 --tool=bemenu --tool-args="-p Clipboard -W 0.5 -cnl25 --fn 'Hack Nerd Font 16'"
 
 exec mako --anchor bottom-right
 
