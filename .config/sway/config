@@ -230,6 +230,8 @@ bindsym $mod+m exec makoctl dismiss -a
 
 bindsym $mod+l exec ~/.local/bin/lockscreen --force
 
+bindsym $mod+question exec ~/.local/bin/bemoji
+
 bindsym XF86PowerOff exec systemctl suspend
 bindsym XF86Sleep exec systemctl suspend
 
