@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/share/code/code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations "$@"

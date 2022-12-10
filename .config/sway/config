@@ -216,6 +216,7 @@ bindsym $mod+r mode "resize"
 
 bindsym Ctrl+grave exec clipman pick --max-items=25 --tool=bemenu --tool-args="-p Clipboard -W 0.5 -cnl25 --fn 'Hack Nerd Font 16'"
 bindsym Ctrl+asciitilde exec clipman clear --max-items=25 --tool=bemenu --tool-args="-p Clipboard -W 0.5 -cnl25 --fn 'Hack Nerd Font 16'"
+bindsym Print exec ~/.local/bin/screencap
 
 exec mako --anchor bottom-right
 

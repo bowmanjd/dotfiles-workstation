@@ -1,0 +1,3 @@
+#!/bin/sh
+
+microsoft-edge-beta --enable-features=UseOzonePlatform --ozone-platform=wayland "$@"
